@@ -22,6 +22,10 @@ module.exports = function(app) {
         // Total difference in scores are logged to a new array so index positions for Friend data and score are matched
         scores.push(tempScore);
       }
+      // Validate score values as numbers, not strings, before posting
+      for (z = 0; z < req.body.scores.length; z++) {
+        req.body.scores[z] = parseInt(req.body.scores[z]);
+      }
       // Add the new Friend data to the array
       friendsData.push(req.body);
       // Find the lowest score difference from the comparisons
