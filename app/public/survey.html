@@ -5,15 +5,10 @@
   <meta charset="UTF-8">
   <title>FriendFinder</title>
 
-  <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-  <!-- Font Awesome Glyphicons -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
-  <!-- Chosen -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
@@ -36,7 +31,7 @@
     <hr>
 
     <h3><strong>Question 1</strong></h3>
-    <h4>???</h4>
+    <h4>You love being the center of attention.</h4>
     <select class="chosen-select" id="q1">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -47,7 +42,7 @@
     </select>
 
     <h3><strong>Question 2</strong></h3>
-    <h4>???</h4>
+    <h4>You often fear for the worst.</h4>
     <select class="chosen-select" id="q2">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -59,7 +54,7 @@
 
 
     <h3><strong>Question 3</strong></h3>
-    <h4>???</h4>
+    <h4>You love to go on adventures.</h4>
     <select class="chosen-select" id="q3">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -71,7 +66,7 @@
 
 
     <h3><strong>Question 4</strong></h3>
-    <h4>???</h4>
+    <h4>You genuinely like most people.</h4>
     <select class="chosen-select" id="q4">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -83,7 +78,7 @@
 
 
     <h3><strong>Question 5</strong></h3>
-    <h4>???</h4>
+    <h4>You believe there is no absolute right or wrong.</h4>
     <select class="chosen-select" id="q5">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -95,7 +90,7 @@
 
 
     <h3><strong>Question 6</strong></h3>
-    <h4>???</h4>
+    <h4>You prefer to avoid confrontation.</h4>
     <select class="chosen-select" id="q6">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -107,7 +102,7 @@
 
 
     <h3><strong>Question 7</strong></h3>
-    <h4>???</h4>
+    <h4>You are religious.</h4>
     <select class="chosen-select" id="q7">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -118,7 +113,7 @@
     </select>
 
     <h3><strong>Question 8</strong></h3>
-    <h4>???</h4>
+    <h4>You consider yourself highly unique and/or talented.</h4>
     <select class="chosen-select" id="q8">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -129,7 +124,7 @@
     </select>
 
     <h3><strong>Question 9</strong></h3>
-    <h4>???</h4>
+    <h4>You are always on time to events.</h4>
     <select class="chosen-select" id="q9">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -140,7 +135,7 @@
     </select>
 
     <h3><strong>Question 10</strong></h3>
-    <h4>???</h4>
+    <h4>You love to challenge yourself.</h4>
     <select class="chosen-select" id="q10">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -154,23 +149,20 @@
     <br>
 
     <!-- Submit Button -->
-    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
-     Submit</button>
+    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">Submit</button>
 
     <hr>
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/toamboygitty/Friend-Finder">GitHub Repo</a></p>
+        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/tomboygitty/Friend-Finder">GitHub Repo</a></p>
       </div>
     </footer>
 
   </div>
 
-  <!-- Modal -->
   <div id="results-modal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
-      <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -178,7 +170,7 @@
         </div>
         <div class="modal-body">
           <h2 id="match-name"></h2>
-          <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+          <img id="match-img" src="https://i.imgur.com/DWbLRYom.jpg" alt="">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -189,7 +181,7 @@
   </div>
 
   <script type="text/javascript">
-    // Chosen CSS
+    // Setup Chosen configuration
     var config = {
       ".chosen-select": {},
       ".chosen-select-deselect": {
@@ -206,15 +198,16 @@
       }
     };
 
+    // Add configured Chosen setup for every input
     for (var selector in config) {
       $(selector).chosen(config[selector]);
     }
 
-    // Capture the form inputs
+    // Submit button on-click event
     $("#submit").on("click", function(event) {
       event.preventDefault();
 
-      // Form validation
+      // Function to validate all inputs as filled
       function validateForm() {
         var isValid = true;
         $(".form-control").each(function() {
@@ -234,7 +227,7 @@
 
       // If all required fields are filled
       if (validateForm()) {
-        // Create an object for the user"s data
+        // Store user's data in an object
         var userData = {
           name: $("#name").val(),
           photo: $("#photo").val(),
@@ -252,14 +245,14 @@
           ]
         };
 
-        // AJAX post the data to the friends API.
+        // AJAX call to post the data to the friends API
         $.post("/api/friends", userData, function(data) {
 
-          // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+          // Get the data from the best match and display name and photo
           $("#match-name").text(data.name);
           $("#match-img").attr("src", data.photo);
 
-          // Show the modal with the best match
+          // Overlay the modal with the best matching friend
           $("#results-modal").modal("toggle");
 
         });
